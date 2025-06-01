@@ -6,7 +6,6 @@ namespace GitHubDeployMonitor
 {
     public class AppConfig
     {
-        public string RepoDirectory { get; set; } = string.Empty;
         public string ApiKey { get; set; } = string.Empty;
         public bool UsePrivateKey { get; set; } = false;
 

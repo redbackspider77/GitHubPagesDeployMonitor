@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -13,6 +14,13 @@ namespace GitHubDeployMonitor
         private readonly System.Windows.Forms.Timer checkTimer;
         private readonly AppConfig config;
         private string lastSha = string.Empty;
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            this.Visible = false;
+            this.ShowInTaskbar = false;
+        }
 
         public Form1(AppConfig loadedConfig)
         {
@@ -30,7 +38,7 @@ namespace GitHubDeployMonitor
             trayIcon.ContextMenuStrip.Items.Add("Exit", null, (s, e) => Application.Exit());
             trayIcon.BalloonTipClicked += TrayIcon_BalloonTipClicked;
 
-            checkTimer = new System.Windows.Forms.Timer { Interval = 10000 };
+            checkTimer = new System.Windows.Forms.Timer { Interval = Properties.Settings.Default.CheckInterval };
             checkTimer.Tick += async (s, e) => await CheckGitHub();
 
             // Pre-load SHA and start timer
@@ -46,9 +54,19 @@ namespace GitHubDeployMonitor
 
             try
             {
-                var url = $"https://api.github.com/repos/{config.RepoDirectory}/commits/main";
-                var resp = await client.GetStringAsync(url);
-                var doc = JsonDocument.Parse(resp);
+                var url = $"https://api.github.com/repos/{Properties.Settings.Default.RepoDirectory}/commits/main";
+                var response = await client.GetAsync(url);
+
+                if (response.StatusCode == HttpStatusCode.Forbidden)
+                {
+                    trayIcon.BalloonTipTitle = "❌ Rate Limited";
+                    trayIcon.BalloonTipText = "GitHub API rate limit exceeded. Use an API key to avoid this.";
+                    trayIcon.ShowBalloonTip(3000);
+                    return;
+                }
+
+                var content = await response.Content.ReadAsStringAsync();
+                var doc = JsonDocument.Parse(content);
                 lastSha = doc.RootElement.GetProperty("sha").GetString() ?? string.Empty;
                 checkTimer.Start();
             }
@@ -70,15 +88,29 @@ namespace GitHubDeployMonitor
         {
             using var client = new HttpClient();
             client.DefaultRequestHeaders.Add("User-Agent", "GitHubDeployMonitor");
+
             if (config.UsePrivateKey && !string.IsNullOrWhiteSpace(config.ApiKey))
                 client.DefaultRequestHeaders.Add("Authorization", $"Bearer {config.ApiKey}");
 
             try
             {
-                var url = $"https://api.github.com/repos/{config.RepoDirectory}/commits/main";
-                var resp = await client.GetStringAsync(url);
-                var doc = JsonDocument.Parse(resp);
+                var url = $"https://api.github.com/repos/{Properties.Settings.Default.RepoDirectory}/commits/main";
+                var response = await client.GetAsync(url);
+
+                // ✅ Rate limit = HTTP 403 and contains "documentation_url"
+                if (response.StatusCode == System.Net.HttpStatusCode.Forbidden)
+                {
+                    trayIcon.BalloonTipTitle = "❌ Rate Limited";
+                    trayIcon.BalloonTipText = "GitHub API rate limit exceeded. Use an API key to avoid this.";
+                    trayIcon.ShowBalloonTip(3000);
+                    return;
+                }
+
+                // ✅ Safe to parse now
+                var content = await response.Content.ReadAsStringAsync();
+                var doc = JsonDocument.Parse(content);
                 var sha = doc.RootElement.GetProperty("sha").GetString();
+
                 if (!string.IsNullOrEmpty(sha) && sha != lastSha)
                 {
                     lastSha = sha;
@@ -111,7 +143,7 @@ namespace GitHubDeployMonitor
                 await Task.Delay(5000);
                 try
                 {
-                    var url = $"https://api.github.com/repos/{config.RepoDirectory}/commits/{sha}/check-runs";
+                    var url = $"https://api.github.com/repos/{Properties.Settings.Default.RepoDirectory}/commits/{sha}/check-runs";
                     var resp = await client.GetStringAsync(url);
                     var doc = JsonDocument.Parse(resp);
                     var checks = doc.RootElement.GetProperty("check_runs");

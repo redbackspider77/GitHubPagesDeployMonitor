@@ -13,6 +13,7 @@ namespace GitHubDeployMonitor
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(infoForm));
             label = new Label();
             btnGenerate = new Button();
             btnOK = new Button();
@@ -22,13 +23,13 @@ namespace GitHubDeployMonitor
             // 
             label.Location = new Point(12, 9);
             label.Name = "label";
-            label.Size = new Size(260, 60);
+            label.Size = new Size(260, 118);
             label.TabIndex = 2;
-            label.Text = "Generate a personal access token with 'repo' and 'workflow' scopes and paste it in the API key box in settings for private repos.";
+            label.Text = resources.GetString("label.Text");
             // 
             // btnGenerate
             // 
-            btnGenerate.Location = new Point(3, 60);
+            btnGenerate.Location = new Point(12, 124);
             btnGenerate.Name = "btnGenerate";
             btnGenerate.Size = new Size(160, 23);
             btnGenerate.TabIndex = 1;
@@ -37,7 +38,7 @@ namespace GitHubDeployMonitor
             // 
             // btnOK
             // 
-            btnOK.Location = new Point(197, 60);
+            btnOK.Location = new Point(197, 124);
             btnOK.Name = "btnOK";
             btnOK.Size = new Size(75, 23);
             btnOK.TabIndex = 0;
@@ -46,10 +47,11 @@ namespace GitHubDeployMonitor
             // 
             // infoForm
             // 
-            ClientSize = new Size(274, 92);
+            ClientSize = new Size(274, 154);
             Controls.Add(btnOK);
             Controls.Add(btnGenerate);
             Controls.Add(label);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "infoForm";
             Text = "Info";
             ResumeLayout(false);

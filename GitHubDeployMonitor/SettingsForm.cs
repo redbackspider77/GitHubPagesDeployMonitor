@@ -13,7 +13,6 @@ namespace GitHubDeployMonitor
             config = currentConfig;
             InitializeComponent();
             
-            repoTextBox.Text = config.RepoDirectory;
             apiKeyTextBox.Text = config.ApiKey;
             privateKeyRadio.Checked = config.UsePrivateKey;
             publicKeyRadio.Checked = !config.UsePrivateKey;
@@ -32,7 +31,9 @@ namespace GitHubDeployMonitor
                 return;
             }
 
-            config.RepoDirectory = repoTextBox.Text.Trim();
+            Properties.Settings.Default.RepoDirectory = repoTextBox.Text.Trim();
+            Properties.Settings.Default.CheckInterval = (int)numInterval.Value;
+            Properties.Settings.Default.Save();
             config.ApiKey = apiKeyTextBox.Text.Trim();
             config.UsePrivateKey = privateKeyRadio.Checked;
             config.Save();

@@ -13,63 +13,130 @@
 
         private void InitializeComponent()
         {
-            this.label1 = new Label();
-            this.label2 = new Label();
-            this.repoTextBox = new TextBox();
-            this.publicKeyRadio = new RadioButton();
-            this.privateKeyRadio = new RadioButton();
-            this.apiKeyTextBox = new TextBox();
-            this.saveButton = new Button();
-            this.infoButton = new Button();
-            this.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm));
+            label1 = new Label();
+            label2 = new Label();
+            repoTextBox = new TextBox();
+            publicKeyRadio = new RadioButton();
+            privateKeyRadio = new RadioButton();
+            apiKeyTextBox = new TextBox();
+            saveButton = new Button();
+            infoButton = new Button();
+            numInterval = new NumericUpDown();
+            label3 = new Label();
+            ((System.ComponentModel.ISupportInitialize)numInterval).BeginInit();
+            SuspendLayout();
+            // 
             // label1
-            this.label1.AutoSize = true;
-            this.label1.Location = new Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new Size(260, 15);
-            this.label1.Text = "GitHub Page To Monitor Directory (owner/repo):";
-            // repoTextBox
-            this.repoTextBox.Location = new Point(12, 27);
-            this.repoTextBox.Size = new Size(260, 23);
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(12, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(263, 15);
+            label1.TabIndex = 7;
+            label1.Text = "GitHub Page To Monitor Directory (owner/repo):";
+            // 
             // label2
-            this.label2.AutoSize = true;
-            this.label2.Location = new Point(12, 60);
-            this.label2.Size = new Size(117, 15);
-            this.label2.Text = "Use private API key?";
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(12, 60);
+            label2.Name = "label2";
+            label2.Size = new Size(112, 15);
+            label2.TabIndex = 6;
+            label2.Text = "Use private API key?";
+            // 
+            // repoTextBox
+            // 
+            repoTextBox.Location = new Point(12, 27);
+            repoTextBox.Name = "repoTextBox";
+            repoTextBox.Size = new Size(309, 23);
+            repoTextBox.TabIndex = 5;
+            repoTextBox.Text = Properties.Settings.Default.RepoDirectory;
+            // 
             // publicKeyRadio
-            this.publicKeyRadio.AutoSize = true;
-            this.publicKeyRadio.Location = new Point(12, 78);
-            this.publicKeyRadio.Text = "No";
+            // 
+            publicKeyRadio.AutoSize = true;
+            publicKeyRadio.Location = new Point(12, 78);
+            publicKeyRadio.Name = "publicKeyRadio";
+            publicKeyRadio.Size = new Size(41, 19);
+            publicKeyRadio.TabIndex = 4;
+            publicKeyRadio.Text = "No";
+            // 
             // privateKeyRadio
-            this.privateKeyRadio.AutoSize = true;
-            this.privateKeyRadio.Location = new Point(12, 100);
-            this.privateKeyRadio.Text = "Yes (enter below)";
+            // 
+            privateKeyRadio.AutoSize = true;
+            privateKeyRadio.Location = new Point(12, 100);
+            privateKeyRadio.Name = "privateKeyRadio";
+            privateKeyRadio.Size = new Size(115, 19);
+            privateKeyRadio.TabIndex = 3;
+            privateKeyRadio.Text = "Yes (enter below)";
+            // 
             // apiKeyTextBox
-            this.apiKeyTextBox.Location = new Point(12, 125);
-            this.apiKeyTextBox.Size = new Size(260, 23);
+            // 
+            apiKeyTextBox.Location = new Point(12, 125);
+            apiKeyTextBox.Name = "apiKeyTextBox";
+            apiKeyTextBox.Size = new Size(309, 23);
+            apiKeyTextBox.TabIndex = 2;
+            // 
             // saveButton
-            this.saveButton.Location = new Point(12, 160);
-            this.saveButton.Size = new Size(120, 23);
-            this.saveButton.Text = "Save and Start";
-            this.saveButton.Click += saveButton_Click;
+            // 
+            saveButton.Location = new Point(201, 193);
+            saveButton.Name = "saveButton";
+            saveButton.Size = new Size(120, 23);
+            saveButton.TabIndex = 1;
+            saveButton.Text = "Save and Start";
+            saveButton.Click += saveButton_Click;
+            // 
             // infoButton
-            this.infoButton.Location = new Point(200, 75);
-            this.infoButton.Size = new Size(24, 24);
-            this.infoButton.Text = "?";
-            this.infoButton.Click += infoButton_Click;
+            // 
+            infoButton.Location = new Point(130, 55);
+            infoButton.Name = "infoButton";
+            infoButton.Size = new Size(24, 24);
+            infoButton.TabIndex = 0;
+            infoButton.Text = "?";
+            infoButton.Click += infoButton_Click;
+            // 
+            // numInterval
+            // 
+            numInterval.Location = new Point(13, 177);
+            numInterval.Name = "numInterval";
+            numInterval.Size = new Size(120, 23);
+            numInterval.TabIndex = 8;
+            numInterval.Minimum = 100;
+            numInterval.Maximum = 600000;
+            numInterval.Increment = 1000;
+            numInterval.Value = Properties.Settings.Default.CheckInterval;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(12, 159);
+            label3.Name = "label3";
+            label3.Size = new Size(321, 15);
+            label3.TabIndex = 9;
+            label3.Text = "Check interval (how many milliseconds in between checks):";
+            // 
             // SettingsForm
-            this.ClientSize = new Size(284, 195);
-            this.Controls.Add(this.infoButton);
-            this.Controls.Add(this.saveButton);
-            this.Controls.Add(this.apiKeyTextBox);
-            this.Controls.Add(this.privateKeyRadio);
-            this.Controls.Add(this.publicKeyRadio);
-            this.Controls.Add(this.repoTextBox);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Text = "Settings";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            // 
+            ClientSize = new Size(337, 225);
+            Controls.Add(label3);
+            Controls.Add(numInterval);
+            Controls.Add(infoButton);
+            Controls.Add(saveButton);
+            Controls.Add(apiKeyTextBox);
+            Controls.Add(privateKeyRadio);
+            Controls.Add(publicKeyRadio);
+            Controls.Add(repoTextBox);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Name = "SettingsForm";
+            Text = "Settings";
+            ((System.ComponentModel.ISupportInitialize)numInterval).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
+        private NumericUpDown numInterval;
+        private Label label3;
     }
 }
