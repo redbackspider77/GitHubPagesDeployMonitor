@@ -29,7 +29,7 @@ namespace GitHubDeployMonitor
 
             trayIcon = new NotifyIcon
             {
-                Icon = SystemIcons.Application,
+                Icon = new Icon("git-push.ico"),
                 Text = "GitHub Pages Monitor",
                 Visible = true,
                 ContextMenuStrip = new ContextMenuStrip()

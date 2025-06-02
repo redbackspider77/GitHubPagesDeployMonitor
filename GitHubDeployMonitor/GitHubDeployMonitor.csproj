@@ -13,7 +13,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="git-push.ico" />
+    <Content Include="git-push.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
