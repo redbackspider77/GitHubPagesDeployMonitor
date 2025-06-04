@@ -38,7 +38,7 @@ namespace GitHubDeployMonitor
             config.UsePrivateKey = privateKeyRadio.Checked;
             config.Save();
 
-            MessageBox.Show("Settings saved.");
+            MessageBox.Show("Settings saved and program started monitoring!");
             Close();
         }
 

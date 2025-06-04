@@ -5,6 +5,8 @@ VisualStudioVersion = 17.14.36109.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitHubDeployMonitor", "GitHubDeployMonitor\GitHubDeployMonitor.csproj", "{02A76468-AEC0-417F-A54A-256C883BBAEA}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Github Pages Deploy Monitor", "Github Pages Deploy Monitor\Github Pages Deploy Monitor.vdproj", "{98422AC1-0F03-2CB2-875D-FA62BE17EAFE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{02A76468-AEC0-417F-A54A-256C883BBAEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02A76468-AEC0-417F-A54A-256C883BBAEA}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{02A76468-AEC0-417F-A54A-256C883BBAEA}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{98422AC1-0F03-2CB2-875D-FA62BE17EAFE}.Debug|Any CPU.ActiveCfg = Debug
+		{98422AC1-0F03-2CB2-875D-FA62BE17EAFE}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
