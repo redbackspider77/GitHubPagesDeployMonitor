@@ -107,6 +107,20 @@
     {
         "CustomAction"
         {
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_9EE7ADBA860C4E5687A82782EB6AFEA4"
+            {
+            "Name" = "8:GitHubDeployMonitor.exe"
+            "Condition" = "8:"
+            "Object" = "8:_A339E1BDFC8548FFBD3B5DE4C1D99179"
+            "FileType" = "3:2"
+            "InstallAction" = "3:2"
+            "Arguments" = "8:/Install"
+            "EntryPoint" = "8:"
+            "Sequence" = "3:1"
+            "Identifier" = "8:_ED6AD94B_1714_48F7_A947_7AE5E355FA14"
+            "InstallerClass" = "11:FALSE"
+            "CustomActionData" = "8:"
+            }
         }
         "DefaultFeature"
         {
@@ -368,7 +382,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Github Pages Deploy Monitor"
         "ProductCode" = "8:{04A20CDA-6BF5-49D0-AFBA-0953060D93B3}"
-        "PackageCode" = "8:{7CB57F8A-6AFF-4AAA-BAC4-FB9E70E37691}"
+        "PackageCode" = "8:{4DEAA361-B63D-4C69-84F1-C7191B648114}"
         "UpgradeCode" = "8:{51C9D7F0-1AF3-4AB9-A765-12585B699C2A}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
