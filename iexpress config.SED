@@ -26,14 +26,12 @@ DisplayLicense=
 FinishMessage=
 TargetName=C:\Users\Kuzma\Desktop\Visual Studio\GitHubDeployMonitor\install files\Github Pages Deploy Monitor.EXE
 FriendlyName=Github Pages Deploy Monitor
-AppLaunched=setup.exe
+AppLaunched=msiexec /i "GITHUB~1.msi"
 PostInstallCmd=cmd /c msiexec /i "MyApp.msi" /qn && start "" "C:\Program Files (x86)\redbackspider69\Github Pages Deploy Monitor\GitHubDeployMonitor.exe"
 AdminQuietInstCmd=
 UserQuietInstCmd=
 FILE0="Github Pages Deploy Monitor.msi"
-FILE1="setup.exe"
 [SourceFiles]
-SourceFiles0=C:\Users\Kuzma\Desktop\Visual Studio\GitHubDeployMonitor\install files\
+SourceFiles0=C:\Users\Kuzma\Desktop\Visual Studio\GitHubDeployMonitor\Github Pages Deploy Monitor\Release\
 [SourceFiles0]
 %FILE0%=
-%FILE1%=
