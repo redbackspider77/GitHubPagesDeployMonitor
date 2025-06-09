@@ -6,16 +6,23 @@ namespace GitHubDeployMonitor
 {
     public partial class SettingsForm : Form
     {
-        private readonly AppConfig config;
 
-        public SettingsForm(AppConfig currentConfig)
+        public SettingsForm()
         {
-            config = currentConfig;
             InitializeComponent();
-            
-            apiKeyTextBox.Text = config.ApiKey;
-            privateKeyRadio.Checked = config.UsePrivateKey;
-            publicKeyRadio.Checked = !config.UsePrivateKey;
+
+            repoTextBox.Text = Properties.Settings.Default.RepoDirectory;
+            apiKeyTextBox.Text = Properties.Settings.Default.ApiKey;
+            privateKeyRadio.Checked = Properties.Settings.Default.UsePrivateKey;
+            publicKeyRadio.Checked = !Properties.Settings.Default.UsePrivateKey;
+            listBox.Items.Clear();
+            if (Properties.Settings.Default.NamesToIgnore != null)
+            {
+                foreach (var item in Properties.Settings.Default.NamesToIgnore)
+                {
+                    listBox.Items.Add(item);
+                }
+            }
         }
 
         private void saveButton_Click(object sender, EventArgs e)
@@ -27,16 +34,22 @@ namespace GitHubDeployMonitor
             }
             if (privateKeyRadio.Checked && string.IsNullOrWhiteSpace(apiKeyTextBox.Text))
             {
-                MessageBox.Show("Please enter your GitHub API key when using private mode.");
+                MessageBox.Show("Please enter your GitHub API key.");
                 return;
             }
 
+            var ignoreList = new System.Collections.Specialized.StringCollection();
+            foreach (var item in listBox.Items)
+            {
+                ignoreList.Add(item.ToString());
+            }
+
+            Properties.Settings.Default.NamesToIgnore = ignoreList;
             Properties.Settings.Default.RepoDirectory = repoTextBox.Text.Trim();
             Properties.Settings.Default.CheckInterval = (int)numInterval.Value;
+            Properties.Settings.Default.ApiKey = apiKeyTextBox.Text.Trim();
+            Properties.Settings.Default.UsePrivateKey = privateKeyRadio.Checked;
             Properties.Settings.Default.Save();
-            config.ApiKey = apiKeyTextBox.Text.Trim();
-            config.UsePrivateKey = privateKeyRadio.Checked;
-            config.Save();
 
             MessageBox.Show("Settings saved and program started monitoring!");
             Close();
@@ -46,6 +59,23 @@ namespace GitHubDeployMonitor
         {
             using (var info = new infoForm())
                 info.ShowDialog();
+        }
+
+        private void removeButton_Click(object sender, EventArgs e)
+        {
+            if (listBox.SelectedItem != null)
+            {
+                listBox.Items.Remove(listBox.SelectedItem);
+            }
+        }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(addString.Text))
+            {
+                listBox.Items.Add(addString.Text.Trim());
+                addString.Clear();
+            }
         }
     }
 }

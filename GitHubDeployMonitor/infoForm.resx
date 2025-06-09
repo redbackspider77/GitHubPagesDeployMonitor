@@ -118,9 +118,19 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label.Text" xml:space="preserve">
-    <value>Generate a personal access token with 'repo' and 'workflow' scopes and paste it in the API key box in settings for private repos.
+    <value>Using no API key only allows 60 requests per hour, so a higher check interval is recommended if not using a personal API key. A personal API key is required for private repositories as well.
 
-Using no API key only allows 60 requests per hour, so a higher check interval is recommended if not using a private API key.</value>
+
+
+Click the button above to generate a fine-grained personal access token, which can be used to avoid these rate limits, and follow these instructions:
+
+1. Choose a name like "Github Pages Deploy Monitor".
+
+2. In "Repository access," select "Public repositories" if the repo you want to monitor is public.
+
+3. If your repo is private, select "Only select repositories" and choose the private repo. Then choose "Read-only" for "Contents" under "Repository permissions."
+
+5. Press "Generate token" and paste it in the API key text box in settings.</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

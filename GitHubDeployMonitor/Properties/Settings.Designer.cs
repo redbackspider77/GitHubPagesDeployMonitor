@@ -46,5 +46,43 @@ namespace GitHubDeployMonitor.Properties {
                 this["RepoDirectory"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("github_pat_ilovegithubapi")]
+        public string ApiKey {
+            get {
+                return ((string)(this["ApiKey"]));
+            }
+            set {
+                this["ApiKey"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool UsePrivateKey {
+            get {
+                return ((bool)(this["UsePrivateKey"]));
+            }
+            set {
+                this["UsePrivateKey"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsd=\"http://www.w3." +
+            "org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\r\n  <s" +
+            "tring>bot</string>\r\n</ArrayOfString>")]
+        public global::System.Collections.Specialized.StringCollection NamesToIgnore {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["NamesToIgnore"]));
+            }
+            set {
+                this["NamesToIgnore"] = value;
+            }
+        }
     }
 }

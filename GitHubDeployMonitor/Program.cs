@@ -12,14 +12,13 @@ namespace GitHubDeployMonitor
             Application.SetCompatibleTextRenderingDefault(false);
 
             // Load config and show settings first
-            var config = AppConfig.Load();
-            using (var settings = new SettingsForm(config))
+            using (var settings = new SettingsForm())
             {
                 Application.Run(settings);
             }
 
             // Start tray monitor
-            Application.Run(new Form1(config));
+            Application.Run(new Form1());
         }
     }
 }

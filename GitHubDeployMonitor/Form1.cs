@@ -12,7 +12,6 @@ namespace GitHubDeployMonitor
     {
         private readonly NotifyIcon trayIcon;
         private readonly System.Windows.Forms.Timer checkTimer;
-        private readonly AppConfig config;
         private string lastSha = string.Empty;
 
         protected override void OnLoad(EventArgs e)
@@ -22,9 +21,8 @@ namespace GitHubDeployMonitor
             this.ShowInTaskbar = false;
         }
 
-        public Form1(AppConfig loadedConfig)
+        public Form1()
         {
-            config = loadedConfig;
             InitializeComponent();
 
             trayIcon = new NotifyIcon
@@ -48,9 +46,9 @@ namespace GitHubDeployMonitor
         private async Task InitializeMonitorAsync()
         {
             using var client = new HttpClient();
-            client.DefaultRequestHeaders.Add("User-Agent", "GitHubDeployMonitor");
-            if (config.UsePrivateKey && !string.IsNullOrWhiteSpace(config.ApiKey))
-                client.DefaultRequestHeaders.Add("Authorization", $"Bearer {config.ApiKey}");
+            client.DefaultRequestHeaders.Add("User-Agent", "GitHubPagesDeployMonitor");
+            if (Properties.Settings.Default.UsePrivateKey && !string.IsNullOrWhiteSpace(Properties.Settings.Default.ApiKey))
+                client.DefaultRequestHeaders.Add("Authorization", $"Bearer {Properties.Settings.Default.ApiKey}");
 
             try
             {
@@ -79,7 +77,7 @@ namespace GitHubDeployMonitor
         private void OpenSettings(object? sender, EventArgs e)
         {
             checkTimer.Stop();
-            using var form = new SettingsForm(config);
+            using var form = new SettingsForm();
             form.ShowDialog();
             InitializeMonitorAsync().ConfigureAwait(false);
         }
@@ -87,10 +85,10 @@ namespace GitHubDeployMonitor
         private async Task CheckGitHub()
         {
             using var client = new HttpClient();
-            client.DefaultRequestHeaders.Add("User-Agent", "GitHubDeployMonitor");
+            client.DefaultRequestHeaders.Add("User-Agent", "GitHubPagesDeployMonitor");
 
-            if (config.UsePrivateKey && !string.IsNullOrWhiteSpace(config.ApiKey))
-                client.DefaultRequestHeaders.Add("Authorization", $"Bearer {config.ApiKey}");
+            if (Properties.Settings.Default.UsePrivateKey && !string.IsNullOrWhiteSpace(Properties.Settings.Default.ApiKey))
+                client.DefaultRequestHeaders.Add("Authorization", $"Bearer {Properties.Settings.Default.ApiKey}");
 
             try
             {
@@ -110,9 +108,26 @@ namespace GitHubDeployMonitor
                 var content = await response.Content.ReadAsStringAsync();
                 var doc = JsonDocument.Parse(content);
                 var sha = doc.RootElement.GetProperty("sha").GetString();
-
+                var author = doc.RootElement.GetProperty("commit")
+                    .GetProperty("author")
+                    .GetProperty("name")
+                    .GetString();
+                if (author != null)
+                {
+                    foreach (var item in Properties.Settings.Default.NamesToIgnore)
+                    {
+                        if (item != null)
+                        {
+                            if (author.Contains(item))
+                            {
+                                return;
+                            }
+                        }
+                    }
+                }
                 if (!string.IsNullOrEmpty(sha) && sha != lastSha)
                 {
+                    Console.WriteLine($"New commit detected with sha f{sha}");
                     lastSha = sha;
                     trayIcon.ShowBalloonTip(1000, "📦 New Push", "New push detected.", ToolTipIcon.Info);
                     _ = MonitorChecksAsync(sha);
@@ -134,25 +149,33 @@ namespace GitHubDeployMonitor
         private async Task MonitorChecksAsync(string sha)
         {
             using var client = new HttpClient();
-            client.DefaultRequestHeaders.Add("User-Agent", "GitHubDeployMonitor");
-            if (config.UsePrivateKey && !string.IsNullOrWhiteSpace(config.ApiKey))
-                client.DefaultRequestHeaders.Add("Authorization", $"Bearer {config.ApiKey}");
+            client.DefaultRequestHeaders.Add("User-Agent", "GitHubPagesDeployMonitor");
+            if (Properties.Settings.Default.UsePrivateKey && !string.IsNullOrWhiteSpace(Properties.Settings.Default.ApiKey))
+                client.DefaultRequestHeaders.Add("Authorization", $"Bearer {Properties.Settings.Default.ApiKey}");
 
             while (true)
             {
-                await Task.Delay(5000);
+                await Task.Delay(Properties.Settings.Default.CheckInterval);
                 try
                 {
                     var url = $"https://api.github.com/repos/{Properties.Settings.Default.RepoDirectory}/commits/{sha}/check-runs";
                     var resp = await client.GetStringAsync(url);
                     var doc = JsonDocument.Parse(resp);
                     var checks = doc.RootElement.GetProperty("check_runs");
-                    int total = checks.GetArrayLength();
-                    int completed = checks.EnumerateArray().Count(c => c.GetProperty("status").GetString() == "completed");
-                    if (completed == total && total > 0)
+                    foreach (var check in checks.EnumerateArray())
                     {
-                        trayIcon.ShowBalloonTip(1000, "✅ Deploy Complete", "Your GitHub Page has been updated.", ToolTipIcon.Info);
-                        break;
+                        if (check.GetProperty("name").GetString() == "deploy")
+                        {
+                            var status = check.GetProperty("status").GetString();
+                            var conclusion = check.GetProperty("conclusion").GetString();
+
+                            if (status == "completed" && conclusion == "success")
+                            {
+                                Console.WriteLine("Checks completed");
+                                trayIcon.ShowBalloonTip(1000, "✅ Deploy Complete", "Your GitHub Page has been updated.", ToolTipIcon.Info);
+                                return;
+                            }
+                        }
                     }
                 }
                 catch

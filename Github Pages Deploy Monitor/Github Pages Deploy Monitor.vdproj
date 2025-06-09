@@ -15,56 +15,62 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_0A3BC54372D34575AC5B7181845FD3B5"
+        "MsmKey" = "8:_1B7BB6E6EA144938AAE8D414B45AF4DB"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_0B48E58609FD4825A5A8CF5948725582"
+        "MsmKey" = "8:_3CC1407F7EA143648BF82EF572F7AEC4"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_2ECC0DBBA0854A039B6850522A0F6146"
+        "MsmKey" = "8:_57BEF8A054AB40DBA78FBD11D8CF9649"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_5A5FCFBB8E044329ACDA0550CDB7B6D8"
+        "MsmKey" = "8:_5BEDE9952B63300CA2BA6E8E04B21DEC"
+        "OwnerKey" = "8:_57BEF8A054AB40DBA78FBD11D8CF9649"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_7A27F7CDD54E4ADE8D0F6810F0D616D5"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_74B5CC862F484E0CAF4E838C02923BA2"
+        "MsmKey" = "8:_7FE4BAEF71754216B42FA885CC719968"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_88444A5FF2E64F109BB536E238C36507"
+        "MsmKey" = "8:_92FDF53F0A2F4809AB83425B7C365F1D"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_A339E1BDFC8548FFBD3B5DE4C1D99179"
+        "MsmKey" = "8:_9694AC22334E466FB188B89E1F552FD0"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_EC4F4640B54F4BC189F4581BE6FCE188"
+        "MsmKey" = "8:_FF6F72BF32AD40948146D37E46EA07A2"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_0A3BC54372D34575AC5B7181845FD3B5"
+        "OwnerKey" = "8:_1B7BB6E6EA144938AAE8D414B45AF4DB"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -85,6 +91,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -101,6 +123,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
     }
     "Deployable"
@@ -140,20 +178,20 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0A3BC54372D34575AC5B7181845FD3B5"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_1B7BB6E6EA144938AAE8D414B45AF4DB"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:GitHubDeployMonitor, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_0A3BC54372D34575AC5B7181845FD3B5"
+                    "_1B7BB6E6EA144938AAE8D414B45AF4DB"
                     {
                     "Name" = "8:GitHubDeployMonitor.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:..\\GitHubDeployMonitor\\bin\\Debug\\net8.0-windows\\GitHubDeployMonitor.dll"
+            "SourcePath" = "8:..\\GitHubDeployMonitor\\bin\\Release\\net8.0-windows\\publish\\GitHubDeployMonitor.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_D99D616EB58A4FEE82B509766E8EEFD8"
@@ -171,49 +209,9 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0B48E58609FD4825A5A8CF5948725582"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3CC1407F7EA143648BF82EF572F7AEC4"
             {
-            "SourcePath" = "8:..\\GitHubDeployMonitor\\bin\\Debug\\net8.0-windows\\GitHubDeployMonitor.dll.config"
-            "TargetName" = "8:GitHubDeployMonitor.dll.config"
-            "Tag" = "8:"
-            "Folder" = "8:_D99D616EB58A4FEE82B509766E8EEFD8"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2ECC0DBBA0854A039B6850522A0F6146"
-            {
-            "SourcePath" = "8:..\\GitHubDeployMonitor\\bin\\Debug\\net8.0-windows\\config.json"
-            "TargetName" = "8:config.json"
-            "Tag" = "8:"
-            "Folder" = "8:_D99D616EB58A4FEE82B509766E8EEFD8"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5A5FCFBB8E044329ACDA0550CDB7B6D8"
-            {
-            "SourcePath" = "8:..\\GitHubDeployMonitor\\bin\\Debug\\net8.0-windows\\GitHubDeployMonitor.pdb"
+            "SourcePath" = "8:..\\GitHubDeployMonitor\\bin\\Release\\net8.0-windows\\publish\\GitHubDeployMonitor.pdb"
             "TargetName" = "8:GitHubDeployMonitor.pdb"
             "Tag" = "8:"
             "Folder" = "8:_D99D616EB58A4FEE82B509766E8EEFD8"
@@ -231,10 +229,21 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_74B5CC862F484E0CAF4E838C02923BA2"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_57BEF8A054AB40DBA78FBD11D8CF9649"
             {
-            "SourcePath" = "8:..\\GitHubDeployMonitor\\bin\\Debug\\net8.0-windows\\GitHubDeployMonitor.runtimeconfig.json"
-            "TargetName" = "8:GitHubDeployMonitor.runtimeconfig.json"
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Microsoft.Windows.SDK.NET, Version=10.0.26100.38, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_57BEF8A054AB40DBA78FBD11D8CF9649"
+                    {
+                    "Name" = "8:Microsoft.Windows.SDK.NET.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:..\\GitHubDeployMonitor\\bin\\Release\\net8.0-windows\\publish\\Microsoft.Windows.SDK.NET.dll"
+            "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_D99D616EB58A4FEE82B509766E8EEFD8"
             "Condition" = "8:"
@@ -251,9 +260,40 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_88444A5FF2E64F109BB536E238C36507"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_5BEDE9952B63300CA2BA6E8E04B21DEC"
             {
-            "SourcePath" = "8:..\\GitHubDeployMonitor\\bin\\Debug\\net8.0-windows\\git-push.ico"
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:WinRT.Runtime, Version=2.2.0.0, Culture=neutral, PublicKeyToken=99ea127f02d97709, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_5BEDE9952B63300CA2BA6E8E04B21DEC"
+                    {
+                    "Name" = "8:WinRT.Runtime.dll"
+                    "Attributes" = "3:0"
+                    }
+                }
+            "SourcePath" = "8:WinRT.Runtime.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_D99D616EB58A4FEE82B509766E8EEFD8"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:FALSE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7A27F7CDD54E4ADE8D0F6810F0D616D5"
+            {
+            "SourcePath" = "8:..\\GitHubDeployMonitor\\bin\\Release\\net8.0-windows\\publish\\git-push.ico"
             "TargetName" = "8:git-push.ico"
             "Tag" = "8:"
             "Folder" = "8:_D99D616EB58A4FEE82B509766E8EEFD8"
@@ -271,10 +311,10 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A339E1BDFC8548FFBD3B5DE4C1D99179"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7FE4BAEF71754216B42FA885CC719968"
             {
-            "SourcePath" = "8:..\\GitHubDeployMonitor\\bin\\Debug\\net8.0-windows\\GitHubDeployMonitor.exe"
-            "TargetName" = "8:GitHubDeployMonitor.exe"
+            "SourcePath" = "8:..\\GitHubDeployMonitor\\bin\\Release\\net8.0-windows\\publish\\GitHubDeployMonitor.deps.json"
+            "TargetName" = "8:GitHubDeployMonitor.deps.json"
             "Tag" = "8:"
             "Folder" = "8:_D99D616EB58A4FEE82B509766E8EEFD8"
             "Condition" = "8:"
@@ -291,10 +331,50 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_EC4F4640B54F4BC189F4581BE6FCE188"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_92FDF53F0A2F4809AB83425B7C365F1D"
             {
-            "SourcePath" = "8:..\\GitHubDeployMonitor\\bin\\Debug\\net8.0-windows\\GitHubDeployMonitor.deps.json"
-            "TargetName" = "8:GitHubDeployMonitor.deps.json"
+            "SourcePath" = "8:..\\GitHubDeployMonitor\\bin\\Release\\net8.0-windows\\publish\\GitHubDeployMonitor.dll.config"
+            "TargetName" = "8:GitHubDeployMonitor.dll.config"
+            "Tag" = "8:"
+            "Folder" = "8:_D99D616EB58A4FEE82B509766E8EEFD8"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9694AC22334E466FB188B89E1F552FD0"
+            {
+            "SourcePath" = "8:..\\GitHubDeployMonitor\\bin\\Release\\net8.0-windows\\publish\\GitHubDeployMonitor.runtimeconfig.json"
+            "TargetName" = "8:GitHubDeployMonitor.runtimeconfig.json"
+            "Tag" = "8:"
+            "Folder" = "8:_D99D616EB58A4FEE82B509766E8EEFD8"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FF6F72BF32AD40948146D37E46EA07A2"
+            {
+            "SourcePath" = "8:..\\GitHubDeployMonitor\\bin\\Release\\net8.0-windows\\publish\\GitHubDeployMonitor.exe"
+            "TargetName" = "8:GitHubDeployMonitor.exe"
             "Tag" = "8:"
             "Folder" = "8:_D99D616EB58A4FEE82B509766E8EEFD8"
             "Condition" = "8:"
@@ -385,7 +465,7 @@
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:https://github.com/redbackspider69/GitHubPagesDeployMonitor"
-        "ARPPRODUCTICON" = "8:_88444A5FF2E64F109BB536E238C36507"
+        "ARPPRODUCTICON" = "8:"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
@@ -488,7 +568,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_503BC5F336CB4149B0664028C1062DE0"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_7B00649FAD954A44B1FDCFC3B48A2B8B"
             {
             "Name" = "8:Github Pages Deploy Monitor"
             "Arguments" = "8:"
@@ -496,10 +576,10 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_A339E1BDFC8548FFBD3B5DE4C1D99179"
+            "Target" = "8:_FF6F72BF32AD40948146D37E46EA07A2"
             "Folder" = "8:_9E351B56705D47F4A981B462C9FD60F9"
             "WorkingFolder" = "8:_D99D616EB58A4FEE82B509766E8EEFD8"
-            "Icon" = "8:"
+            "Icon" = "8:_7A27F7CDD54E4ADE8D0F6810F0D616D5"
             "Feature" = "8:"
             }
         }

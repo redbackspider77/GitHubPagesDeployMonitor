@@ -6,7 +6,7 @@ namespace GitHubDeployMonitor
 {
     public partial class infoForm : Form
     {
-        private const string apiUrl = "https://github.com/settings/tokens/new?scopes=repo,workflow&description=GitHubPagesMonitor";
+        private const string apiUrl = "https://github.com/settings/personal-access-tokens/new?type=fine-grained";
 
         public infoForm()
         {
