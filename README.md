@@ -44,8 +44,7 @@ The check interval sets how many milliseconds pass between checking for a new pu
 </table>
 
 ## To-do list
-- Change Add/remove program version to 1.0.0-beta instead of 1.0.0
-- Exit program instead of starting to monitor when closing the settings via the X.
+- wait for suggestions
 
 ### About me
 
