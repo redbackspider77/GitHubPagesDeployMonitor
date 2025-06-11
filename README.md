@@ -5,7 +5,7 @@ Not affiliated with Github.
 
 ## Installation
 
-1. Download GithubPagesDeployMonitor-v*.\*.*_Setup.msi from https://github.com/redbackspider69/GitHubPagesDeployMonitor/releases/latest.
+1. Download x64/ARM64_GithubPagesDeployMonitor-v*.\*.*_Setup.msi from https://github.com/redbackspider69/GitHubPagesDeployMonitor/releases/latest, depending on your system architecture.
 2. Run the installation file.
 3. You can now find a shortcut for the application in your start menu.
 
