@@ -77,5 +77,13 @@ namespace GitHubDeployMonitor
                 addString.Clear();
             }
         }
+
+        private void SettingsForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                Application.Exit();
+            }
+        }
     }
 }

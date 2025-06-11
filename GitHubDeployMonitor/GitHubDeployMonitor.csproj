@@ -7,6 +7,9 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <SupportedOSPlatformVersion>10.0.17763.0</SupportedOSPlatformVersion>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ApplicationIcon>bin\Release\net8.0-windows\publish\git-push.ico</ApplicationIcon>
+    <Platforms>AnyCPU;ARM64</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="bin\Release\net8.0-windows\publish\git-push.ico" />
     <Content Include="git-push.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

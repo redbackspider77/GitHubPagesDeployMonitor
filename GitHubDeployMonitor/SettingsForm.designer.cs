@@ -186,6 +186,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "SettingsForm";
             Text = "Github Pages Deploy Monitor";
+            this.FormClosing += SettingsForm_FormClosing;
             ((System.ComponentModel.ISupportInitialize)numInterval).EndInit();
             ResumeLayout(false);
             PerformLayout();
