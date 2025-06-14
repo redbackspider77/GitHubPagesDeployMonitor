@@ -1,6 +1,6 @@
 # GitHub Pages Deploy Monitor
 
-A [Windows Forms](https://github.com/dotnet/winforms) application, built using [VS Community 2022](https://visualstudio.microsoft.com/vs/community/) for Windows 10+. The purpose of this app is to notify the user through a notification when their [Github Page](https://pages.github.com/)'s build and deployment checks have passed since the last push, indicating it has been updated server-side. 
+A [Windows Forms](https://github.com/dotnet/winforms) application, built using [VS Community 2022](https://visualstudio.microsoft.com/vs/community/) for Windows 10+, and packaged with [Advanced Installer](https://www.advancedinstaller.com/). The purpose of this app is to notify the user through a notification when their [Github Page](https://pages.github.com/)'s build and deployment checks have passed since the last push, indicating it has been updated server-side. 
 Not affiliated with Github.
 
 ## Installation
