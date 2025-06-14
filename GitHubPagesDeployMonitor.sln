@@ -5,8 +5,6 @@ VisualStudioVersion = 17.14.36109.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitHubDeployMonitor", "GitHubDeployMonitor\GitHubDeployMonitor.csproj", "{02A76468-AEC0-417F-A54A-256C883BBAEA}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ARM64 Github Pages Deploy Monitor", "ARM64 Github Pages Deploy Monitor\Github Pages Deploy Monitor.vdproj", "{98422AC1-0F03-2CB2-875D-FA62BE17EAFE}"
-EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "x64 Github Pages Deploy Monitor", "x64 Github Pages Deploy Monitor\x64 Github Pages Deploy Monitor.vdproj", "{51977EC0-6491-4248-D900-1ADA4F20F68D}"
 EndProject
 Global
@@ -25,12 +23,6 @@ Global
 		{02A76468-AEC0-417F-A54A-256C883BBAEA}.Release|Any CPU.Build.0 = Debug|ARM64
 		{02A76468-AEC0-417F-A54A-256C883BBAEA}.Release|ARM64.ActiveCfg = Release|Any CPU
 		{02A76468-AEC0-417F-A54A-256C883BBAEA}.Release|ARM64.Build.0 = Release|Any CPU
-		{98422AC1-0F03-2CB2-875D-FA62BE17EAFE}.Debug|Any CPU.ActiveCfg = Debug
-		{98422AC1-0F03-2CB2-875D-FA62BE17EAFE}.Debug|ARM64.ActiveCfg = Debug
-		{98422AC1-0F03-2CB2-875D-FA62BE17EAFE}.Debug|ARM64.Build.0 = Debug
-		{98422AC1-0F03-2CB2-875D-FA62BE17EAFE}.Release|Any CPU.ActiveCfg = Release
-		{98422AC1-0F03-2CB2-875D-FA62BE17EAFE}.Release|ARM64.ActiveCfg = Release
-		{98422AC1-0F03-2CB2-875D-FA62BE17EAFE}.Release|ARM64.Build.0 = Release
 		{51977EC0-6491-4248-D900-1ADA4F20F68D}.Debug|Any CPU.ActiveCfg = Debug
 		{51977EC0-6491-4248-D900-1ADA4F20F68D}.Debug|ARM64.ActiveCfg = Debug
 		{51977EC0-6491-4248-D900-1ADA4F20F68D}.Release|Any CPU.ActiveCfg = Release
