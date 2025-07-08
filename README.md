@@ -43,9 +43,6 @@ The check interval sets how many milliseconds pass between checking for a new pu
   </tr>
 </table>
 
-## To-do list
-- wait for suggestions
-
 ### About me
 
 This is my first Windows application, my first time using Windows Forms, and my first time using Visual Studio. I've leaked my own API keys while testing it a few times, so I really am an amateur. (Don't worry, I've disabled them now) If I have structured something wrong, please correct me, as I was never taught how to share Visual Studio projects on Github, and just created a new repo in my project's files folder.
