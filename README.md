@@ -1,6 +1,6 @@
 # GitHub Pages Deploy Monitor
 
-A [Windows Forms](https://github.com/dotnet/winforms) application, built using [VS Community 2022](https://visualstudio.microsoft.com/vs/community/) for Windows 10+, and packaged with [VS Installer Projects](https://marketplace.visualstudio.com/items?itemName=VisualStudioClient.MicrosoftVisualStudio2017InstallerProjects). The purpose of this app is to notify the user through a notification when their [Github Page](https://pages.github.com/)'s build and deployment checks have passed since the last push, indicating it has been updated server-side. 
+A [Windows Forms](https://github.com/dotnet/winforms) application, built using [VS Community 2022](https://visualstudio.microsoft.com/vs/community/) for Windows 10+, and packaged with [VS Installer Projects](https://marketplace.visualstudio.com/items?itemName=VisualStudioClient.MicrosoftVisualStudio2017InstallerProjects). The purpose of this app is to notify the user through a notification when a [Github Page](https://pages.github.com/)'s build and deployment checks have passed since the last push, indicating it has been updated server-side. 
 Not affiliated with Github.
 
 ## Installation
@@ -12,7 +12,7 @@ Not affiliated with Github.
 ## Usage
 
 ### Choosing repository to monitor
-Enter the directory of the Github Page repository that you want to monitor in the first box, in the format of `owner/repo`.
+Enter the directory of the Github Page repository that you want to monitor in the first box, in the format of `owner/repo` (e.g. `octocat/octocat.github.io`).
 
 ### API Key
 - Not using a personal API key will only allow 60 requests per hour, so a higher check interval or API key is recommended. You will not be able to monitor a private repository without an API key.
@@ -42,9 +42,6 @@ The check interval sets how many milliseconds pass between checking for a new pu
     </td>
   </tr>
 </table>
-
-## To-do list
-- wait for suggestions
 
 ### About me
 
